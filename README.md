@@ -2,29 +2,37 @@
 
 <br />
 
-<h1 align="center">Cardabase</h1>
+<h1 align="center">Cardabase — Card App</h1>
 
-  <p align="center">
-    Cardabase is your digital wallet for loyalty cards. Save all your shop cards in one secure place and access them instantly.
-    <br />
-    <div align="center">
-      <img src="https://github.com/GeorgeYT9769/cardabase-app/blob/main/fastlane/metadata/android/en-US/images/featureGraphic.png?raw=true" alt="Banner">
-    <!-- <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a> https://discord.com/invite/fZNDfG2xv3 -->
-    <br />
-    <div align="center">
-      <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/GeorgeYT9769/cardabase-app?style=for-the-badge&label=Stars">
-      <img alt="GitHub forks" src="https://img.shields.io/github/forks/GeorgeYT9769/cardabase-app?style=for-the-badge&label=Forks">
-      <img alt="GitHub license" src="https://img.shields.io/github/license/GeorgeYT9769/cardabase-app?style=for-the-badge&label=License">
-      <img alt="GitHub Downloads (all assets, all releases)" src="https://img.shields.io/github/downloads/GeorgeYT9769/cardabase-app/total?style=for-the-badge&label=Downloads">
-      <img alt="Downloads@latest" src="https://img.shields.io/github/downloads/GeorgeYT9769/cardabase-app/latest/total?style=for-the-badge">
-      <img alt="Commit Activity" src="https://img.shields.io/github/commit-activity/w/GeorgeYT9769/cardabase-app?style=for-the-badge">
-      <img alt="F-Droid" src="https://img.shields.io/f-droid/v/com.georgeyt9769.cardabase?style=for-the-badge&label=F-Droid">
-      <br />
-      <a href="https://discord.com/invite/fZNDfG2xv3">
-        <img alt="Discord" src="https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white">
-      </a>
-    </div>
-  </p>
+<p align="center">
+  Cardabase is a cross-platform Card App for securely storing and managing loyalty cards, coupons, and membership IDs. It focuses on privacy and offline-first behavior: all card data is encrypted and stored locally by default. The app is implemented in Flutter for mobile, web, and desktop, and includes an optional backend (Go) for self-hosted sync or server features.
+</p>
+
+<p>
+  Key points:
+  - Secure, encrypted local storage for cards
+  - Barcode/QR scanning and generation for easy sharing
+  - Offline-first with optional backend sync
+  - Cross-platform (Android, Web, Windows)
+</p>
+
+<br />
+
+<!-- Removed duplicated header/intro and replaced with a single banner + badges block -->
+<div align="center">
+  <img src="https://github.com/GeorgeYT9769/cardabase-app/blob/main/fastlane/metadata/android/en-US/images/featureGraphic.png?raw=true" alt="Banner">
+  <br />
+  <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/GeorgeYT9769/cardabase-app?style=for-the-badge&label=Stars">
+  <img alt="GitHub forks" src="https://img.shields.io/github/forks/GeorgeYT9769/cardabase-app?style=for-the-badge&label=Forks">
+  <img alt="GitHub license" src="https://img.shields.io/github/license/GeorgeYT9769/cardabase-app?style=for-the-badge&label=License">
+  <img alt="GitHub Downloads (all assets, all releases)" src="https://img.shields.io/github/downloads/GeorgeYT9769/cardabase-app/total?style=for-the-badge&label=Downloads">
+  <img alt="Downloads@latest" src="https://img.shields.io/github/downloads/GeorgeYT9769/cardabase-app/latest/total?style=for-the-badge">
+  <img alt="Commit Activity" src="https://img.shields.io/github/commit-activity/w/GeorgeYT9769/cardabase-app?style=for-the-badge">
+  <img alt="F-Droid" src="https://img.shields.io/f-droid/v/com.georgeyt9769.cardabase?style=for-the-badge&label=F-Droid">
+  <br />
+  <a href="https://discord.com/invite/fZNDfG2xv3">
+    <img alt="Discord" src="https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white">
+  </a>
 </div>
 
 <br />
