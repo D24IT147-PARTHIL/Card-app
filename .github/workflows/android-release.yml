@@ -1,0 +1,68 @@
+name: Android Release
+
+on:
+  push:
+    branches: [ "master" ] #This should be "main" but I dont want it to run all the time when making commits and eventually failing...
+  pull_request:
+    branches: [ "master" ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Create Android Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Download Android keystore
+        id: android_keystore
+        uses: timheuer/base64-to-file@v1.0.3
+        with:
+          fileName: upload-keystore.jks
+          encodedString: ${{ secrets.KEYSTORE_BASE64 }}
+      - name: Create key.properties
+        run: |
+          echo "storeFile=${{ steps.android_keystore.outputs.filePath }}" > android/key.properties
+          echo "storePassword=${{ secrets.STORE_PASSWORD }}" >> android/key.properties
+          echo "keyPassword=${{ secrets.KEY_PASSWORD }}" >> android/key.properties
+          echo "keyAlias=${{ secrets.KEY_ALIAS }}" >> android/key.properties
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: "21"
+          cache: gradle
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.38.5"
+          channel: 'stable'
+          cache: true
+
+      - name: Set up Android SDK
+        run: |
+          echo "ANDROID_SDK_ROOT=$ANDROID_HOME" >> $GITHUB_ENV
+          echo "$ANDROID_HOME/cmdline-tools/latest/bin" >> $GITHUB_PATH
+          echo "$ANDROID_HOME/platform-tools" >> $GITHUB_PATH
+          echo "$ANDROID_HOME/emulator" >> $GITHUB_PATH
+
+      - name: Accept Android SDK licenses
+        run: yes | sdkmanager --licenses || true
+
+      - name: Create secrets file
+        run: |
+          mkdir -p lib/config
+          echo "const String discordWebhookUrl = '${{ secrets.DISCORD_WEBHOOK_URL }}';" > lib/config/secrets.dart
+
+      - name: Get dependencies
+        run: flutter pub get
+
+      - name: Start Android Release Build APK ABIs
+        run: flutter build apk --split-per-abi
+
+      - name: Start Android Release Build APK
+        run: flutter build apk
+
+      - name: Upload Android Release APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-release
+          path: build/app/outputs/flutter-apk/
