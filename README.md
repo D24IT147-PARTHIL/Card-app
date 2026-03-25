@@ -181,3 +181,4 @@ You may need to:
 <img src="https://github.com/GeorgeYT9769/cardabase-app/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/7.png?raw=true" width=204>
 <img src="https://github.com/GeorgeYT9769/cardabase-app/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/8.png?raw=true" width=204>
 </div>
+Commit IV: Update README with version control info
